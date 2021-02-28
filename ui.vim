@@ -16,8 +16,5 @@
 " let g:monokai_gui_italic = 1
 
 
-" 当前行高亮
-autocmd InsertLeave,WinEnter * set cursorline
-autocmd InsertEnter,WinLeave * set nocursorline
 
 

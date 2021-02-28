@@ -1,6 +1,9 @@
 " let g:localmapleader = "\<space>"
 let g:mapleader = "\<space>"
 
+inoremap <c-s><c-s>  <c-o>:w<cr>
+nnoremap <c-s><c-s>  :w<cr>
+
 " Win交互的复制粘贴
 " source $VIMRUNTIME/mswin.vim
 " if has("clipborad")
@@ -79,14 +82,6 @@ nnoremap <leader>tp :tabprevious<cr>
 nnoremap <leader>tgf :tabnew <cfile><cr>
 
 
-" 插入当前时间
-func! GetTimeInfo()
-    "return strftime('%Y-%m-%d %A %H:%M:%S')
-    return strftime('%Y-%m-%d %H:%M:%S')
-endfunction
-inoremap <c-q>sj <C-r>=GetTimeInfo()<cr>
-
-
 " 快速移动当前行
 nnoremap <silent> <leader>[  :<c-u>execute 'move -1-'. v:count1<cr>
 nnoremap <silent> <leader>]  :<c-u>execute 'move +'. v:count1<cr>
@@ -102,13 +97,14 @@ nnoremap <leader>mc  :<c-u><c-r><c-r>='let @'. v:register .' = '. string(getreg(
 nnoremap <leader>ftmd :set ft=markdown<CR>
 
 
+
 " spelling check
 " jumps to the previous spelling mistake [s, then picks the first suggestion 1z=, and then jumps back `]a. The <c-g>u in the middle make it possible to undo the spelling correction quickly.
 "{i} <c-g>u start new undoable edit
 inoremap <c-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
-"Toggle
-nnoremap <silent> <Leader>S :set spell!<CR>
+"Toggle spelling check
+nnoremap <silent> <Leader>spl :set spell!<CR>
 
 " update .add to .add.spl
 function! s:MkSpellAll() abort

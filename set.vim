@@ -1,7 +1,7 @@
 set nocompatible
 set mouse=a
-:nnoremap <ScrollWheelUp> 9<C-Y>
-:nnoremap <ScrollWheelDown> 9<C-E>
+nnoremap <ScrollWheelUp> 9<C-Y>
+nnoremap <ScrollWheelDown> 9<C-E>
 
 
 set encoding=utf-8
